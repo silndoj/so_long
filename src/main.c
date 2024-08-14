@@ -12,10 +12,9 @@
 
 #include "../inc/so_long.h"
 
-int	main(void)
-{
-	mlx_t* mlx = mlx_init(WIDTH, HEIGHT, "Test", true);
-	background(mlx);
-	mlx_terminate(mlx);
-	return (EXIT_SUCCESS);
+int main(void) {
+  mlx_t *mlx = mlx_init(WIDTH, HEIGHT, "Test", true);
+  background(mlx);
+  mlx_terminate(mlx);
+  return (EXIT_SUCCESS);
 }

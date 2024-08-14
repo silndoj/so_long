@@ -34,6 +34,7 @@ files = ft_isalnum \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
+		get_next_line \
 
 CFlags	= -Wall -Wextra -Werror
 

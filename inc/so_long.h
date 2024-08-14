@@ -13,15 +13,16 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+#include "../MLX42/include/MLX42/MLX42.h"
+#include "../tools/lib/libft/libft.h"
 #include <stdint.h>
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
-#include "MLX42.h"
+#include <unistd.h>
 # define WIDTH 2000
 # define HEIGHT 1500
 
-//typedef struct s_game
+// typedef struct s_game
 //{
 //	void			*mlx;
 //	void			*window;
@@ -41,9 +42,9 @@
 //	t_effect		effect;
 //	void			*red_panel;
 //	void			*white_panel;
-//}	t_game;
+// }	t_game;
 
-void	ft_error();
-void	background(mlx_t* mlx);
+void ft_error();
+void background(mlx_t *mlx);
 
 #endif
