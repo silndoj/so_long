@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 23:38:05 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/11 23:56:55 by silndoj          ###   ########.fr       */
+/*   Created: 2024/03/06 19:00:33 by silndoj           #+#    #+#             */
+/*   Updated: 2024/03/11 19:30:13 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+//#include <unistd.h>
+//#include <stdio.h>
+//
+#include "libft.h"
 
-int	main(void)
+size_t	ft_strlen(const char *str)
 {
-	mlx_t* mlx = mlx_init(WIDTH, HEIGHT, "Test", true);
-	background(mlx);
-	mlx_terminate(mlx);
-	return (EXIT_SUCCESS);
+	int	len;
+
+	len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	return (len);
 }
+//
+//int main (void)
+//{
+//	int c;
+//
+//	c = ft_strlen("strstr");
+//	printf("answer is : %d\n", c);
+//	return (0);
+//}

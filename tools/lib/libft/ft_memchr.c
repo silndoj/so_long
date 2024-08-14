@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 23:38:05 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/11 23:56:55 by silndoj          ###   ########.fr       */
+/*   Created: 2024/03/12 17:14:51 by silndoj           #+#    #+#             */
+/*   Updated: 2024/03/18 00:13:47 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+//#include <stdio.h>
+#include "libft.h"
 
-int	main(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	mlx_t* mlx = mlx_init(WIDTH, HEIGHT, "Test", true);
-	background(mlx);
-	mlx_terminate(mlx);
-	return (EXIT_SUCCESS);
+	unsigned char	*s1;
+	size_t			i;
+
+	i = 0;
+	s1 = (unsigned char *) s;
+	while (i < n)
+	{
+		if (s1[i] == (unsigned char) c)
+			return ((void *)(s + i));
+		i++;
+	}
+	return (0);
 }
+//
+//int main()
+//{
+//	char s1[10] = "cecilia";
+//	char *result;
+//
+//	result = ft_memchr(s1, 'i', 6);
+//	printf("result :  %s\n", result);
+//}

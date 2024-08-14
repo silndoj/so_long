@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 23:38:05 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/11 23:56:55 by silndoj          ###   ########.fr       */
+/*   Created: 2024/03/18 10:41:25 by silndoj           #+#    #+#             */
+/*   Updated: 2024/06/08 22:35:58 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+#include "libft.h"
 
-int	main(void)
+void	ft_putendl_fd(char *s, int fd)
 {
-	mlx_t* mlx = mlx_init(WIDTH, HEIGHT, "Test", true);
-	background(mlx);
-	mlx_terminate(mlx);
-	return (EXIT_SUCCESS);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
+//
+//int main()
+//{
+//	ft_putendl_fd("Kali", 1);
+//}

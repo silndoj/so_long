@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
+/*   By: silndoj <silndoj@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 23:30:10 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/12 00:17:59 by silndoj          ###   ########.fr       */
+/*   Created: 2024/03/07 15:43:16 by silndoj           #+#    #+#             */
+/*   Updated: 2024/03/11 13:37:26 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "libft.h"
 
-#include <stdint.h>
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "MLX42.h"
-# define WIDTH 2000
-# define HEIGHT 1500
-
-void	error();
-void	background(mlx_t* mlx);
-
-#endif
+void	ft_bzero(void *s, size_t n)
+{
+	ft_memset(s, 0, n);
+}
+//int main (void)
+//{
+//	char str[] = "Silvi Ndoj";
+//	printf("first is : %s\n", str);
+//	ft_bzero(str, 5);
+//	printf("second is: %s\n", str);
+//	return (0);
+//}

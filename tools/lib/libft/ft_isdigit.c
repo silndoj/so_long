@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 23:38:05 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/11 23:56:55 by silndoj          ###   ########.fr       */
+/*   Created: 2024/03/06 17:29:24 by silndoj           #+#    #+#             */
+/*   Updated: 2024/03/07 16:02:01 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+//#include <unistd.h>
+//#include <stdio.h>
+//
+#include "libft.h"
 
-int	main(void)
+int	ft_isdigit(int c)
 {
-	mlx_t* mlx = mlx_init(WIDTH, HEIGHT, "Test", true);
-	background(mlx);
-	mlx_terminate(mlx);
-	return (EXIT_SUCCESS);
+	if (c >= 48 && c <= 57)
+	{
+		return (1);
+	}
+	else
+		return (0);
 }
+//int main (void)
+//{
+//	int	c;
+//
+//	c = ft_isdigit(47);
+//	printf("answer is: %d\n", c);
+//
+//}

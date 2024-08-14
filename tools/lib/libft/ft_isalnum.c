@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/11 23:38:05 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/11 23:56:55 by silndoj          ###   ########.fr       */
+/*   Created: 2024/03/06 18:08:07 by silndoj           #+#    #+#             */
+/*   Updated: 2024/03/11 13:27:05 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/so_long.h"
+//#include <unistd.h>
+//#include <stdio.h>
+//
+#include "libft.h"
 
-int	main(void)
+int	ft_isalnum(int c)
 {
-	mlx_t* mlx = mlx_init(WIDTH, HEIGHT, "Test", true);
-	background(mlx);
-	mlx_terminate(mlx);
-	return (EXIT_SUCCESS);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
+		|| (c >= 48 && c <= 57))
+		return (1);
+	else
+		return (0);
 }
+//
+//int main (void)
+//{
+//	int	c;
+//
+//	c = ft_isalnum(58);
+//	printf("answer is : %d\n", c);
+//	return (0);
+//}
