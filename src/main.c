@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 		img_pass(game);
 		player_pass(game);
 	}
-	mlx_key_hook(game->mlx_c->mlx, &ft_options, game);
+	//mlx_key_hook(game->mlx_c->mlx, &ft_options, game);
 	mlx_loop(game->mlx_c->mlx);
 	mlx_terminate(game->mlx_c->mlx);
 	free(game);

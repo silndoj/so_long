@@ -2,9 +2,11 @@ NAME				= 	so_long
 
 CC					=		cc
 CFLAGS			=   -Wextra -Wall -Werror 
-SRCS_MAIN		= 	src/background.c	\
+SRCS_MAIN		= 	src/free_game.c		\
 								src/error.c				\
-								src/main.c				
+								src/main.c				\
+								src/map.c
+
 OBJ 				=		tools/obj
 LIBFT 			=		tools/lib/libft/libft.a
 OBJ_MAIN		=		$(SRCS_MAIN:src/%.c=$(OBJ)/%.o)
@@ -12,10 +14,13 @@ OBJ_MAIN		=		$(SRCS_MAIN:src/%.c=$(OBJ)/%.o)
 all:						$(NAME)
 
 $(LIBFT):
-				@cd tools/lib/libft && make
+	@cd tools/lib/libft && make -s
 
-$(NAME):MLX42 $(LIBFT) $(OBJ_MAIN)
-				@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_MAIN) -L./MLX42/build/ -lmlx42 -Iinclude -lglfw -L./tools/lib/libft -lft
+$(PRINTF):
+				@cd tools/lib/printf && make -s
+
+$(NAME):MLX42 $(LIBFT) $(PRINTF) $(OBJ_MAIN)
+				@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_MAIN) -L./MLX42/build/ -lmlx42 -Iinclude -lglfw -L./tools/lib/printf -L./tools/lib/libft -lft
 
 MLX42:
 				@git clone https://github.com/codam-coding-college/MLX42.git
@@ -29,14 +34,16 @@ $(OBJ)/%.o:			src/%.c
 					@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-			@cd tools/lib/libft && make clean
 			@rm -rf $(OBJ)/*
+			@cd tools/lib/libft && make clean -s
+			@cd tools/lib/printf && make clean -s
 
 
 fclean: 			clean
 			@rm -rf $(NAME)
 			@rm -rf $(OBJ)
-			@cd tools/lib/libft && make fclean
+			@cd tools/lib/libft && make fclean -s
+			@cd tools/lib/printf && make fclean -s
 
 
 re:			fclean mlx all

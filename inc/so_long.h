@@ -15,6 +15,7 @@
 
 #include "../MLX42/include/MLX42/MLX42.h"
 #include "../tools/lib/libft/libft.h"
+#include "../tools/lib/printf/ft_printf.h"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>

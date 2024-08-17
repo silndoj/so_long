@@ -32,10 +32,10 @@ void	read_while(t_game *game, char *line)
 	while (line != NULL)
 	{
 		if (i > 100)
-			print_error ("I´m sorry your map is so_long!", game);
+			ft_error("I´m sorry your map is so_long!", game);
 		game->map[i] = ft_strdup(line);
 		if (!game->map[i])
-			print_error("Memory allocation error", game);
+			ft_error("Memory allocation error", game);
 		free(line);
 		line = get_next_line(game->fd);
 		i++;
