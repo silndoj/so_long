@@ -6,14 +6,15 @@
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 23:33:20 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/11 23:33:37 by silndoj          ###   ########.fr       */
+/*   Updated: 2024/08/17 05:00:15 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/so_long.h"
 
-void ft_error()
+void	ft_error(char *str, t_game *game)
 {
-	puts(mlx_strerror(mlx_errno));
-	exit(EXIT_FAILURE);
+	ft_printf("%s\n", str);
+	free_all(game);
+	exit (0);
 }
