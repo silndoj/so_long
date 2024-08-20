@@ -50,16 +50,16 @@ int	map_read(t_game *game, char **argv)
 
 	game->fd = open(argv[1], O_RDONLY);
 	if (game->fd == -1)
-		print_error("Failed to open map file", game);
+		ft_error("Failed to open map file", game);
 	game->map = (char **)malloc(sizeof(char *) * 100);
 	if (!game->map)
-		print_error("Memory allocation error", game);
+		ft_error("Memory allocation error", game);
 	readmap = get_next_line(game->fd);
 	if (!readmap)
-		print_error("Empty map", game);
+		ft_error("Empty map", game);
 	game->map[0] = ft_strdup(readmap);
 	if (!game->map[0])
-		print_error("Memory allocation error", game);
+		ft_error("Memory allocation error", game);
 	free (readmap);
 	readmap = get_next_line(game->fd);
 	read_while(game, readmap);
@@ -72,10 +72,10 @@ void	find_player(t_game *game)
 	int	y;
 
 	y = 0;
-	while (y < game->map_height)
+	while (y < game->height)
 	{
 		x = 0;
-		while (x < game->map_width && game->map[y][x] != '\0')
+		while (x < game->width && game->map[y][x] != '\0')
 		{
 			if (game->map[y][x] == PLAYER)
 			{

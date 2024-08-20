@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-char	*ft_calloc(size_t count, size_t size)
+char	*ft_calloc0(size_t count, size_t size)
 {
 	char	*ptr;
 	size_t	i;
@@ -26,7 +26,7 @@ char	*ft_calloc(size_t count, size_t size)
 	return (ptr);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr0(const char *s, int c)
 {
 	int	i;
 
@@ -34,7 +34,7 @@ char	*ft_strchr(const char *s, int c)
 	if (!s)
 		return (0);
 	if (c == '\0')
-		return ((char *) &s[ft_strlen(s)]);
+		return ((char *) &s[ft_strlen0(s)]);
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char) c)
@@ -46,7 +46,7 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy0(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
@@ -61,7 +61,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ft_strlen0(const char *str)
 {
 	int	len;
 
@@ -75,18 +75,18 @@ size_t	ft_strlen(const char *str)
 	return (len);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin0(char const *s1, char const *s2)
 {
 	char	*ptr;
 	size_t	s1len;
 	size_t	s2len;
 
-	s1len = ft_strlen(s1);
-	s2len = ft_strlen(s2);
-	ptr = (char *) ft_calloc((s1len + s2len + 1), sizeof(char));
+	s1len = ft_strlen0(s1);
+	s2len = ft_strlen0(s2);
+	ptr = (char *) ft_calloc0((s1len + s2len + 1), sizeof(char));
 	if (!ptr)
 		return (NULL);
-	ft_memcpy(ptr, s1, s1len);
-	ft_memcpy((ptr + s1len), s2, s2len);
+	ft_memcpy0(ptr, s1, s1len);
+	ft_memcpy0((ptr + s1len), s2, s2len);
 	return (ptr);
 }

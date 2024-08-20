@@ -17,11 +17,11 @@ char	*ft_strdup(const char *s1, int count)
 	char	*t1;
 	size_t	slen;
 
-	slen = ft_strlen(s1);
-	t1 = (char *) ft_calloc((slen + 1), sizeof(char));
+	slen = ft_strlen0(s1);
+	t1 = (char *) ft_calloc0((slen + 1), sizeof(char));
 	if (!t1)
 		return (NULL);
-	ft_memcpy(t1, s1, count + 1);
+	ft_memcpy0(t1, s1, count + 1);
 	return (t1);
 }
 
@@ -32,9 +32,9 @@ char	*read_again(int fd, char *block)
 	char	*temp;
 
 	read_bytes = 0;
-	while (!ft_strchr(block, '\n'))
+	while (!ft_strchr0(block, '\n'))
 	{
-		block_temp = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
+		block_temp = ft_calloc0((BUFFER_SIZE + 1), sizeof(char));
 		if (!block_temp)
 			return (free(block), NULL);
 		read_bytes = read(fd, block_temp, BUFFER_SIZE);
@@ -46,7 +46,7 @@ char	*read_again(int fd, char *block)
 			break ;
 		}
 		block_temp[read_bytes] = 0;
-		temp = ft_strjoin(block, block_temp);
+		temp = ft_strjoin0(block, block_temp);
 		free(block);
 		block = temp;
 		free(block_temp);
@@ -77,14 +77,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	slen = ft_strlen(s);
+	slen = ft_strlen0(s);
 	sublen = slen - start;
 	if (sublen > len)
 		sublen = len;
-	ptr = (char *) ft_calloc((sublen + 1), sizeof(char));
+	ptr = (char *) ft_calloc0((sublen + 1), sizeof(char));
 	if (!ptr)
 		return (NULL);
-	ft_memcpy(ptr, (s + start + 1), sublen);
+	ft_memcpy0(ptr, (s + start + 1), sublen);
 	ptr[sublen] = 0;
 	return (ptr);
 }
@@ -101,7 +101,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	if (!block)
 	{
-		block = ft_calloc(1, 1);
+		block = ft_calloc0(1, 1);
 		if (!block)
 			return (NULL);
 	}
@@ -111,9 +111,9 @@ char	*get_next_line(int fd)
 	nextblock = nextblock_reset(block, &count);
 	if (!nextblock)
 		return (free(block), block = NULL, NULL);
-	if (ft_strlen(nextblock) == 0)
+	if (ft_strlen0(nextblock) == 0)
 		return (free(block), free(nextblock), block = NULL, NULL);
-	tmpblock = ft_substr(block, count, (ft_strlen(block) - count));
+	tmpblock = ft_substr(block, count, (ft_strlen0(block) - count));
 	free(block);
 	return (block = tmpblock, nextblock);
 }
