@@ -2,25 +2,28 @@ NAME				= 	so_long
 
 CC					=		cc
 CFLAGS			=   -Wextra -Wall -Werror 
+
 SRCS_MAIN		= 	src/free_game.c		\
 								src/error.c				\
 								src/main.c				\
 								src/map.c
 
-OBJ 				=		tools/obj
 LIBFT 			=		tools/lib/libft/libft.a
+PRINTF 			=		tools/lib/printf/libftprintf.a
+
+OBJ 				=		tools/obj
 OBJ_MAIN		=		$(SRCS_MAIN:src/%.c=$(OBJ)/%.o)
 
 all:						$(NAME)
 
 $(LIBFT):
-	@cd tools/lib/libft && make -s
+				@cd tools/lib/libft && make -s
 
 $(PRINTF):
 				@cd tools/lib/printf && make -s
 
 $(NAME):MLX42 $(LIBFT) $(PRINTF) $(OBJ_MAIN)
-				@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_MAIN) -L./MLX42/build/ -lmlx42 -Iinclude -lglfw -L./tools/lib/printf -L./tools/lib/libft -lft
+				@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_MAIN) -L./MLX42/build/ -lmlx42 -Iinclude -lglfw -L./tools/lib/printf -lft -L./tools/lib/libft -lft
 
 MLX42:
 				@git clone https://github.com/codam-coding-college/MLX42.git

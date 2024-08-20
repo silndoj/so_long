@@ -41,7 +41,7 @@ void	read_while(t_game *game, char *line)
 		i++;
 	}
 	game->map[i] = NULL;
-	game->map_height = i;
+	game->height = i;
 }
 
 int	map_read(t_game *game, char **argv)
@@ -77,7 +77,7 @@ void	find_player(t_game *game)
 		x = 0;
 		while (x < game->width && game->map[y][x] != '\0')
 		{
-			if (game->map[y][x] == PLAYER)
+			if (game->map[y][x] == 'P')
 			{
 				game->x_player = x;
 				game->y_player = y;
@@ -97,18 +97,18 @@ int	check_walls(t_game *game)
 
 	x = 0;
 	ft_map_width(game->map[0]);
-	while (x < game->map_width)
+	while (x < game->width)
 	{
-		if (game->map[0][x] != WALL
-			|| game->map[game->map_height - 1][x] != WALL)
+		if (game->map[0][x] != '1'
+			|| game->map[game->height - 1][x] != '1')
 			return (0);
 		x++;
 	}
 	y = 0;
-	while (y < game->map_height)
+	while (y < game->height)
 	{
-		if (game->map[y][0] != WALL
-			|| game->map[y][game->map_width - 1] != WALL)
+		if (game->map[y][0] != '1'
+			|| game->map[y][game->width - 1] != '1')
 			return (0);
 		y++;
 	}
