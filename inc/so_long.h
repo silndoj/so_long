@@ -6,20 +6,20 @@
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 23:30:10 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/17 04:59:27 by silndoj          ###   ########.fr       */
+/*   Updated: 2024/08/21 21:33:32 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#include "../MLX42/include/MLX42/MLX42.h"
-#include "../tools/lib/libft/libft.h"
-#include "../tools/lib/printf/ft_printf.h"
-#include <stdint.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+# include "../MLX42/include/MLX42/MLX42.h"
+# include "../tools/lib/libft/libft.h"
+# include "../tools/lib/printf/ft_printf.h"
+# include <stdint.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef struct s_mlx
 {
@@ -57,26 +57,26 @@ void		ft_error(char *str, t_game *game);
 
 //Map_Check
 int			map_pass(t_game *game, char **argv);
+void		read_all(t_game *game, char *mapline);
+int			map_check(t_game *game, char **argv);
 int			add_line_map(t_game *game, char *line);
 int			ft_map_width(char *line);
 int			check_walls(t_game *game);
 int			check_square(t_game *game);
 int			check_floodfill(t_game *game, char **argv);
-int			its_map(t_game *game, char **argv);
 void		check_count_items(t_game *game);
 void		floodfill(t_game *game, int x, int y);
-void		find_position_player(t_game *game);
+void		find_player(t_game *game);
 
 //Customization_MAP
 void		txt_upload(t_game *game);
 void		img_pass(t_game *game);
 void		player_pass(t_game *game);
 void		mv_count(t_game *game, int dir, int y, int x);
-void		move_player(t_game *game, int dir);
+void		mv_player(t_game *game, int dir);
 void		opt_upload(mlx_key_data_t keydata, void *arg);
 void		reload_player(t_game *game);
 void		check_exit_move(t_game *game, int dir);
-void		read_while(t_game *game, char *line);
 
 //Free_Everything
 void		free_txt(t_game *game);

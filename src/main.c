@@ -6,7 +6,7 @@
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 23:38:05 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/17 04:51:07 by silndoj          ###   ########.fr       */
+/*   Updated: 2024/08/21 21:33:24 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int	main(int argc, char **argv)
 	if (argc != 2)
 		ft_error("---The game need's 1 ARG , to START---", game);
 	map_pass(game, argv);
-	if (its_map(game, argv) == 0)
+	if (map_check(game, argv) == 0)
 	{
 		txt_upload(game);
 		img_pass(game);
 		player_pass(game);
 	}
-	//mlx_key_hook(game->mlx_c->mlx, &ft_options, game);
+	mlx_key_hook(game->mlx_c->mlx, &opt_upload, game);
 	mlx_loop(game->mlx_c->mlx);
 	mlx_terminate(game->mlx_c->mlx);
 	free(game);

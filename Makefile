@@ -1,12 +1,15 @@
 NAME				= 	so_long
 
 CC					=		cc
-CFLAGS			=   -Wextra -Wall -Werror 
+CFLAGS			=   -g -Wextra -Wall -Werror 
 
 SRCS_MAIN		= 	src/free_game.c		\
 								src/error.c				\
 								src/main.c				\
-								src/map.c
+								src/map.c 				\
+								src/map_pars.c		\
+								src/gui_2d.c 			\
+								src/key_hook.c		
 
 LIBFT 			=		tools/lib/libft/libft.a
 PRINTF 			=		tools/lib/printf/libftprintf.a
