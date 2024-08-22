@@ -6,7 +6,7 @@
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:36:25 by silndoj           #+#    #+#             */
-/*   Updated: 2024/03/30 18:56:37 by silndoj          ###   ########.fr       */
+/*   Updated: 2024/08/22 05:34:56 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,3 @@ int	ft_printf(const char *s, ...)
 	va_end(args);
 	return (count);
 }
-//#include <limits.h>
-//int main ()
-//{
-//	int c = 299;
-//
-//	ft_printf("check = > %c", c);
-//	printf("\ncheck = > %c\n", c);
-//	ft_printf("%X", UINT_MAX);
-//	printf("\n%X", UINT_MAX);
-//}

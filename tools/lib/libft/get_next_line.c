@@ -6,13 +6,13 @@
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 03:31:23 by silndoj           #+#    #+#             */
-/*   Updated: 2024/04/23 23:18:49 by silndoj          ###   ########.fr       */
+/*   Updated: 2024/08/22 03:46:09 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strdup(const char *s1, int count)
+char	*ft_strdup0(const char *s1, int count)
 {
 	char	*t1;
 	size_t	slen;
@@ -63,13 +63,13 @@ char	*nextblock_reset(char *block, int *count)
 	while (block[i] != '\0' && block[i] != '\n')
 		i++;
 	*count = i;
-	line = ft_strdup(block, i);
+	line = ft_strdup0(block, i);
 	if (!line)
 		return (free(block), NULL);
 	return (line);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr0(char const *s, unsigned int start, size_t len)
 {
 	size_t	slen;
 	size_t	sublen;
@@ -113,8 +113,7 @@ char	*get_next_line(int fd)
 		return (free(block), block = NULL, NULL);
 	if (ft_strlen0(nextblock) == 0)
 		return (free(block), free(nextblock), block = NULL, NULL);
-	tmpblock = ft_substr(block, count, (ft_strlen0(block) - count));
+	tmpblock = ft_substr0(block, count, (ft_strlen0(block) - count));
 	free(block);
 	return (block = tmpblock, nextblock);
 }
-
