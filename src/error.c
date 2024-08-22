@@ -6,7 +6,7 @@
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/11 23:33:20 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/20 18:43:36 by silndoj          ###   ########.fr       */
+/*   Updated: 2024/08/22 04:30:54 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(char *str, t_game *game)
 {
-	printf("%s\n", str);
+	ft_printf("%s\n", str);
 	free_all(game);
 	exit (0);
 }
