@@ -6,7 +6,7 @@
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 04:43:16 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/21 23:20:43 by silndoj          ###   ########.fr       */
+/*   Updated: 2024/08/22 06:47:44 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void	free_txt(t_game *game)
 	if (game->exit_i)
 		mlx_delete_image(game->mlx, game->exit_i);
 	if (game->wall_i)
-		mlx_delete_image(game->mlx, game->exit_i);
+		mlx_delete_image(game->mlx, game->wall_i);
 	if (game->floor_i)
-		mlx_delete_image(game->mlx, game->exit_i);
+		mlx_delete_image(game->mlx, game->floor_i);
 	if (game->collect_i)
-		mlx_delete_image(game->mlx, game->exit_i);
+		mlx_delete_image(game->mlx, game->collect_i);
 	if (game->player_i)
 		mlx_delete_image(game->mlx, game->player_i);
 }

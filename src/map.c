@@ -6,7 +6,7 @@
 /*   By: silndoj <silndoj@student.42heilbronn.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/17 05:06:33 by silndoj           #+#    #+#             */
-/*   Updated: 2024/08/22 03:55:47 by silndoj          ###   ########.fr       */
+/*   Updated: 2024/08/22 06:48:13 by silndoj          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	read_all(t_game *game, char *mapline)
 	}
 	game->map[i] = NULL;
 	game->height = i;
+	free(mapline);
 }
 
 int	map_pass(t_game *game, char **argv)
