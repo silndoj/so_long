@@ -1,21 +1,22 @@
 NAME				= 	so_long
 
 CC					=		cc
-CFLAGS			=   -g -Wextra -Wall -Werror 
+CFLAGS				=   -g -Wextra -Wall -Werror 
 
-SRCS_MAIN		= 	src/free_game.c		\
-								src/error.c				\
-								src/main.c				\
-								src/map.c 				\
-								src/map_pars.c		\
-								src/gui_2d.c 			\
+SRCS_MAIN			= 	src/free_game.c						\
+								src/error.c					\
+								src/main.c					\
+								src/map.c 					\
+								src/map_pars.c				\
+								src/map_pars_utils.c		\
+								src/gui_2d.c 				\
 								src/key_hook.c		
 
-LIBFT 			=		tools/lib/libft/libft.a
-PRINTF 			=		tools/lib/printf/libftprintf.a
+LIBFT 				=	tools/lib/libft/libft.a
+PRINTF 				=	tools/lib/printf/libftprintf.a
 
-OBJ 				=		tools/obj
-OBJ_MAIN		=		$(SRCS_MAIN:src/%.c=$(OBJ)/%.o)
+OBJ 				=	tools/obj
+OBJ_MAIN			=	$(SRCS_MAIN:src/%.c=$(OBJ)/%.o)
 
 all:						$(NAME)
 
@@ -26,7 +27,7 @@ $(PRINTF):
 				@cd tools/lib/printf && make -s
 
 $(NAME):MLX42 $(LIBFT) $(PRINTF) $(OBJ_MAIN)
-				@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_MAIN) -L./MLX42/build/ -lmlx42 -Iinclude -lglfw -L./tools/lib/printf -lft -L./tools/lib/libft -lft
+				@$(CC) $(CFLAGS) -o $(NAME) $(OBJ_MAIN) -L./MLX42/build/ -lmlx42 -Iinclude -lglfw -L./tools/lib/printf -L./tools/lib/libft -lft
 
 MLX42:
 				@git clone https://github.com/codam-coding-college/MLX42.git
@@ -52,6 +53,6 @@ fclean: 			clean
 			@cd tools/lib/printf && make fclean -s
 
 
-re:			fclean mlx all
+re:			fclean all
 
 .PHONY:		all clean fclean re
